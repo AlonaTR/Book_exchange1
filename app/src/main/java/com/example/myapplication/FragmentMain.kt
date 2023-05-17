@@ -124,6 +124,8 @@ class FragmentMain : Fragment(), BookAdapter.OnItemClickListener {
 
                 override fun onQueryTextChange(newText: String?): Boolean {
                     adapter.filter(newText)
+                    if (newText == null || newText.isEmpty())
+                        adapter.update(books.values.toList())
                     return true
                 }
             })
