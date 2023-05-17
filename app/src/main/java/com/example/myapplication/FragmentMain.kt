@@ -117,6 +117,7 @@ class FragmentMain : Fragment(), BookAdapter.OnItemClickListener {
                 }
             }
 
+
             searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
                 override fun onQueryTextSubmit(query: String?): Boolean {
                     return false
