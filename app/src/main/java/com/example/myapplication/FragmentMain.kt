@@ -11,7 +11,10 @@ import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.lifecycle.asLiveData
+import androidx.lifecycle.lifecycleScope
 import com.example.myapplication.databinding.FragmentMainBinding
+import kotlinx.coroutines.flow.toList
+import kotlinx.coroutines.launch
 
 
 class FragmentMain : Fragment(), BookAdapter.OnItemClickListener {
@@ -81,25 +84,25 @@ class FragmentMain : Fragment(), BookAdapter.OnItemClickListener {
             val db = Books.getDb(this@FragmentMain)
 
             //        add to database from map recipes
-//        val db = Books.getDb(this@FragmentMain)
+
 //            Thread {
 //                db.getDao().deleteAll()
 //            }.start()
 //
-//            books.forEach {
-//                val book = Data(imageId= it.value.imageId,
-//                    title = it.value.title,
-//                    author = it.value.author,
-//                    publisher = it.value.publisher,
-//                    genre = it.value.genre,
-//                    year_of_publishing = it.value.year_of_publishing,
-//                    about_book = it.value.about_book,
-//                    user_name = it.value.user_name,
-//                    like = it.value.like)
-//                Thread {
-//                    db.getDao().insert(book)
-//                }.start()
-//            }
+            books.forEach {
+                val book = Data(imageId= it.value.imageId,
+                    title = it.value.title,
+                    author = it.value.author,
+                    publisher = it.value.publisher,
+                    genre = it.value.genre,
+                    year_of_publishing = it.value.year_of_publishing,
+                    about_book = it.value.about_book,
+                    user_name = it.value.user_name,
+                    like = it.value.like)
+                Thread {
+                    db.getDao().insert(book)
+                }.start()
+            }
 
             db.getDao().getAll().asLiveData().observe(viewLifecycleOwner) {list ->
 
@@ -113,10 +116,10 @@ class FragmentMain : Fragment(), BookAdapter.OnItemClickListener {
                                     about_book = it.about_book,
                                     user_name = it.user_name,
                                     like = it.like)
-                    adapter.addRecipe(book)
+                    adapter.addBook(book)
+
                 }
             }
-
 
 
             searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
@@ -143,5 +146,24 @@ class FragmentMain : Fragment(), BookAdapter.OnItemClickListener {
         startActivity(intent)
         Log.d("MyLog", "onItemClick: $book")
     }
+
+    fun updateBookList() {
+        // Получите список книг из базы данных
+        val db = Books.getDb(this)
+        val bookListFlow = db.getDao().getAll()
+
+        // Преобразуйте Flow<List<Data>> в List<List<Data>>
+        lifecycleScope.launch {
+            val bookList = bookListFlow.toList()
+
+            // Проверьте, что список книг не пустой, прежде чем передавать его в адаптер
+            if (bookList.isNotEmpty()) {
+                adapter.update(bookList[0])
+            }
+        }
+    }
+
+
+
 
 }

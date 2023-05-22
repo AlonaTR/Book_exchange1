@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.databinding.BookItemBinding
+import kotlinx.coroutines.flow.Flow
 import java.util.ArrayList
 
 class BookAdapter(val listener: OnItemClickListener): RecyclerView.Adapter<BookAdapter.BookHolder>() {
@@ -16,13 +17,19 @@ class BookAdapter(val listener: OnItemClickListener): RecyclerView.Adapter<BookA
         notifyDataSetChanged()
     }
 
+
+
     class BookHolder(item: View) : RecyclerView.ViewHolder(item) {
         val binding = BookItemBinding.bind(item)
         fun bind(book: Data, listener: OnItemClickListener) = with(binding) {
             im.setImageResource(book.imageId)
             tvTitle.text = book.title
 //            передать в описание первые 20 символов и закончить ...
-            tvDesc.text = book.about_book.substring(0, 100) + "..."
+            if (book.about_book.length > 100) {
+                tvDesc.text = book.about_book.substring(0, 100) + "..."
+            } else {
+                tvDesc.text = book.about_book
+            }
 
 //            tvDesc.text = book.about_book
             itemView.setOnClickListener {
@@ -44,7 +51,7 @@ class BookAdapter(val listener: OnItemClickListener): RecyclerView.Adapter<BookA
         holder.bind(bookList[position], listener)
     }
 
-    fun addRecipe(book: Data){
+    fun addBook(book: Data){
         bookList.add(book)
         notifyDataSetChanged()
     }
@@ -61,4 +68,7 @@ class BookAdapter(val listener: OnItemClickListener): RecyclerView.Adapter<BookA
             update(filteredList)
         }
     }
+
+
+
 }
