@@ -44,11 +44,10 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.action_user -> {
-                // Добавьте код для обработки нажатия на значок "Home"
+                val intent = Intent(this, User_Info::class.java)
+                startActivity(intent)
                 return true
             }
-            // Добавьте обработку других элементов меню (если нужно)
-            // ...
             else -> return super.onOptionsItemSelected(item)
         }
     }
