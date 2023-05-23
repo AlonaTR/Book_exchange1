@@ -3,6 +3,9 @@ package com.example.myapplication
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import androidx.appcompat.widget.Toolbar
 import com.example.myapplication.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -15,6 +18,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val toolbar: Toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
 
 
         val fragment = FragmentMain() // создаем экземпляр фрагмента
@@ -31,8 +36,21 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return true
+    }
 
-
-
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_user -> {
+                // Добавьте код для обработки нажатия на значок "Home"
+                return true
+            }
+            // Добавьте обработку других элементов меню (если нужно)
+            // ...
+            else -> return super.onOptionsItemSelected(item)
+        }
+    }
 
 }

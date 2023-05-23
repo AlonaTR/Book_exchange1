@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 import com.example.myapplication.databinding.FragmentBookBinding
-
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 
 class FragmentBook : Fragment() {
@@ -28,6 +30,20 @@ class FragmentBook : Fragment() {
         binding.tvPublisher.text = "Publisher: "+ item.publisher
         binding.tvGenre.text = "Genre: "+ item.genre
         binding.tvYearPublished.text ="Published in "+ item.year_of_publishing
+
+        binding.checkboxLike.setOnCheckedChangeListener { _, isChecked ->
+            val dao = Books.getDb(this).getDao()
+            GlobalScope.launch(Dispatchers.IO) {
+                if (isChecked) {
+                    item.like = true
+                    dao.updateLike(item.title, true)
+                } else {
+                    item.like = false
+                    dao.updateLike(item.title, false)
+                }
+            }
+        }
+
 
 
         return binding.root

@@ -24,6 +24,6 @@ data class Data(
     @ColumnInfo(name = "user_name")
     val user_name: String,
     @ColumnInfo(name = "like")
-    val like: Boolean
+    var like: Boolean
 
 ) : Serializable

@@ -18,6 +18,8 @@
 
     </FrameLayout>
 
+
+
     <Button
         android:id="@+id/bClose"
         android:layout_width="match_parent"

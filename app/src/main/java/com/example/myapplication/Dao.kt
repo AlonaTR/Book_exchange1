@@ -14,4 +14,9 @@ interface Dao {
     //delete all
     @Query("DELETE FROM Data")
     fun deleteAll()
+    //update like
+    @Query("UPDATE Data SET `like` = :likeValue WHERE title = :title")
+    suspend fun updateLike(title: String, likeValue: Boolean)
+
+
 }
