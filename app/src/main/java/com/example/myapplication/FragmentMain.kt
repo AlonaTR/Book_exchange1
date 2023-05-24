@@ -89,20 +89,20 @@ class FragmentMain : Fragment(), BookAdapter.OnItemClickListener {
 //                db.getDao().deleteAll()
 //            }.start()
 //
-            books.forEach {
-                val book = Data(imageId= it.value.imageId,
-                    title = it.value.title,
-                    author = it.value.author,
-                    publisher = it.value.publisher,
-                    genre = it.value.genre,
-                    year_of_publishing = it.value.year_of_publishing,
-                    about_book = it.value.about_book,
-                    user_name = it.value.user_name,
-                    like = it.value.like)
-                Thread {
-                    db.getDao().insert(book)
-                }.start()
-            }
+//            books.forEach {
+//                val book = Data(imageId= it.value.imageId,
+//                    title = it.value.title,
+//                    author = it.value.author,
+//                    publisher = it.value.publisher,
+//                    genre = it.value.genre,
+//                    year_of_publishing = it.value.year_of_publishing,
+//                    about_book = it.value.about_book,
+//                    user_name = it.value.user_name,
+//                    like = it.value.like)
+//                Thread {
+//                    db.getDao().insert(book)
+//                }.start()
+//            }
 
             db.getDao().getAll().asLiveData().observe(viewLifecycleOwner) {list ->
 

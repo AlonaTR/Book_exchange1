@@ -23,12 +23,12 @@ class BookAdapter(val listener: OnItemClickListener): RecyclerView.Adapter<BookA
         val binding = BookItemBinding.bind(item)
         fun bind(book: Data, listener: OnItemClickListener) = with(binding) {
             im.setImageResource(book.imageId)
-            tvTitle.text = book.title
+            tvTitleItem.text = book.title
 //            передать в описание первые 20 символов и закончить ...
             if (book.about_book.length > 100) {
-                tvDesc.text = book.about_book.substring(0, 100) + "..."
+                tvDescItem.text = book.about_book.substring(0, 100) + "..."
             } else {
-                tvDesc.text = book.about_book
+                tvDescItem.text = book.about_book
             }
 
 //            tvDesc.text = book.about_book

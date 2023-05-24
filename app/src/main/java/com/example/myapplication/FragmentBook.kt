@@ -23,13 +23,19 @@ class FragmentBook : Fragment() {
 
         val item = activity?.intent?.getSerializableExtra("item") as Data
 
-        binding.imMain.setImageResource(item.imageId)
-        binding.tvTitle.text = item.title
-        binding.tvAbout.text = "About: " + item.about_book
-        binding.tvAuthor.text = "Author: "+ item.author
-        binding.tvPublisher.text = "Publisher: "+ item.publisher
-        binding.tvGenre.text = "Genre: "+ item.genre
-        binding.tvYearPublished.text ="Published in "+ item.year_of_publishing
+        binding.imMainBook.setImageResource(item.imageId)
+        binding.tvTitleBook.text = item.title
+        binding.tvAboutBook.text = "About book: " + item.about_book
+        binding.tvAuthorBook.text = "Author: "+ item.author
+        binding.tvPublisherBook.text = "Publisher: "+ item.publisher
+        binding.tvGenreBook.text = "Genre: "+ item.genre
+        binding.tvYearPublishedBook.text ="Published in "+ item.year_of_publishing
+        if (item.like) {
+            binding.checkboxLike.isChecked = true
+        } else {
+            binding.checkboxLike.isChecked = false
+        }
+
 
         binding.checkboxLike.setOnCheckedChangeListener { _, isChecked ->
             val dao = Books.getDb(this).getDao()
