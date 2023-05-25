@@ -19,6 +19,7 @@ class BookAdapter(val listener: OnItemClickListener): RecyclerView.Adapter<BookA
 
 
 
+
     class BookHolder(item: View) : RecyclerView.ViewHolder(item) {
         val binding = BookItemBinding.bind(item)
         fun bind(book: Data, listener: OnItemClickListener) = with(binding) {
@@ -55,6 +56,8 @@ class BookAdapter(val listener: OnItemClickListener): RecyclerView.Adapter<BookA
         bookList.add(book)
         notifyDataSetChanged()
     }
+
+
 
     interface OnItemClickListener {
         fun onItemClick(book: Data)

@@ -21,6 +21,17 @@ class User_Info : AppCompatActivity() {
         binding.tvPhone.text = "Phone: " + phone
 
 
+        binding.btFavourites.setOnClickListener {
+            val intent = intent
+            intent.setClass(this, Favourites::class.java)
+            startActivity(intent)
+        }
+
+        binding.btMyBooks.setOnClickListener {
+            val intent = intent
+            intent.setClass(this, My_books::class.java)
+            startActivity(intent)
+        }
 
     }
 }

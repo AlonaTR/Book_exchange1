@@ -7,6 +7,7 @@ import android.provider.MediaStore
 import com.example.myapplication.databinding.AddBookBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.flow.forEach
 import kotlinx.coroutines.launch
 
 class AddBook : AppCompatActivity() {
@@ -72,5 +73,16 @@ class AddBook : AppCompatActivity() {
         val imagePath = cursor?.getString(columnIndex!!)
         cursor?.close()
         return imagePath
+    }
+
+    // when activity closed write in log UserData
+    override fun onDestroy() {
+        super.onDestroy()
+        val db = User.getDb(this)
+        GlobalScope.launch(Dispatchers.IO) {
+            db.getUserDao().getAll().collect {
+                println(it)
+            }
+        }
     }
 }

@@ -17,15 +17,30 @@ class ContentActivity : AppCompatActivity() {
         binding.bClose.setOnClickListener {
             finish()
         }
-        val fragment = FragmentBook()
-        val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.fl_book , fragment)
-        transaction.commit()
+        val tag = "FragmentBook"
+        val fragmentType = intent.getStringExtra("fragment")
 
-
-
+        if (fragmentType == "my_book") {
+            val fragment = FragmentMyBook()
+            supportFragmentManager.beginTransaction()
+                .add(R.id.fl_book, fragment, tag)
+                .commit()
+        } else {
+            val fragment = FragmentBook()
+            supportFragmentManager.beginTransaction()
+                .add(R.id.fl_book, fragment, tag)
+                .commit()
+        }
 
     }
+// when activity close, update data in fragment
+//    override fun onDestroy() {
+//        super.onDestroy()
+//        val fragment = supportFragmentManager.findFragmentById(R.id.fl_book) as FragmentBook
+//        fragment.updateData()
+//    }
+
+
 
 
 }

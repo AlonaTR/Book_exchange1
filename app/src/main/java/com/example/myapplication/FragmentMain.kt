@@ -143,8 +143,9 @@ class FragmentMain : Fragment(), BookAdapter.OnItemClickListener {
     override fun onItemClick(book: Data) {
         val intent = Intent(requireContext() , ContentActivity::class.java)
         intent.putExtra("item", book)
+        intent.putExtra("fragment", "book")
         startActivity(intent)
-        Log.d("MyLog", "onItemClick: $book")
+//        Log.d("MyLog", "onItemClick: $book")
     }
 
     fun updateBookList() {
