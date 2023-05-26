@@ -1,6 +1,7 @@
 package com.example.myapplication
 
 
+import FragmentBook
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.viewbinding.ViewBinding
@@ -33,14 +34,6 @@ class ContentActivity : AppCompatActivity() {
         }
 
     }
-// when activity close, update data in fragment
-//    override fun onDestroy() {
-//        super.onDestroy()
-//        val fragment = supportFragmentManager.findFragmentById(R.id.fl_book) as FragmentBook
-//        fragment.updateData()
-//    }
-
-
 
 
 }
