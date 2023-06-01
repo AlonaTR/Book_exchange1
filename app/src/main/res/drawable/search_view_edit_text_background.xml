@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@android:color/transparent" /> <!-- Цвет фона (белый) -->
+    <padding android:bottom="2dp" /> <!-- Отступ снизу для полоски -->
+    <corners android:radius="0dp" /> <!-- Опционально: скругление углов, если требуется -->
+    <stroke
+        android:width="2dp"
+    android:color="@color/grey" /> <!-- Цвет полоски (замените на нужный вам цвет) -->
+</shape>
