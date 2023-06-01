@@ -1,6 +1,9 @@
 package com.example.myapplication
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 02e74ec8eb16d92de7fdf390d55fa8528f92ad0d
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -16,20 +19,26 @@ import androidx.lifecycle.lifecycleScope
 import com.example.myapplication.databinding.FragmentMainBinding
 import kotlinx.coroutines.flow.toList
 import kotlinx.coroutines.launch
+<<<<<<< HEAD
 import android.app.Activity.RESULT_OK
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
+=======
+>>>>>>> 02e74ec8eb16d92de7fdf390d55fa8528f92ad0d
 
 
 class FragmentMain : Fragment(), BookAdapter.OnItemClickListener {
     lateinit var binding: FragmentMainBinding
     private val adapter = BookAdapter(this)
     lateinit var searchView: SearchView
+<<<<<<< HEAD
     private lateinit var bookList: MutableList<Data>
     companion object {
         const val REQUEST_CONTENT = 1
 //        const val RESULT_OK = -1
     }
+=======
+>>>>>>> 02e74ec8eb16d92de7fdf390d55fa8528f92ad0d
 
 
     val books = mapOf(
@@ -46,7 +55,11 @@ class FragmentMain : Fragment(), BookAdapter.OnItemClickListener {
             like = true),
         "The Adventures of Tom Sawyer" to Data(
             id = null,
+<<<<<<< HEAD
             imageId= R.drawable.tom,
+=======
+            imageId= R.drawable.alice,
+>>>>>>> 02e74ec8eb16d92de7fdf390d55fa8528f92ad0d
             title = "The Adventures of Tom Sawyer",
             author = "Mark Twain",
             publisher = "Harper & Brothers",
@@ -55,6 +68,7 @@ class FragmentMain : Fragment(), BookAdapter.OnItemClickListener {
             about_book = "Tom is known for his lively and rebellious spirit, constantly seeking adventure and excitement. He frequently finds himself in trouble but manages to navigate his way out of it using his cleverness and quick thinking. Together with his loyal friend Huckleberry Finn, Tom embarks on a series of escapades that include playing pirates, hunting for treasure, and even witnessing a murder. Throughout the novel, Tom encounters various characters, including his strict Aunt Polly, his love interest Becky Thatcher, and the notorious Injun Joe. As the story progresses, Tom learns valuable lessons about friendship, responsibility, and the consequences of his actions.",
             user_name = "wellboy",
             like = false),
+<<<<<<< HEAD
         "The Great Gatsby" to Data(
             id = null,
             imageId= R.drawable.gatsby,
@@ -88,6 +102,14 @@ class FragmentMain : Fragment(), BookAdapter.OnItemClickListener {
             about_book = "The Catcher in the Rye is a novel by J.D. Salinger that tells the story of Holden Caulfield, a teenage boy who has been expelled from his prep school and is wandering aimlessly through New York City. Over the course of several days, Holden encounters a variety of people and situations that force him to confront his own feelings of alienation and disillusionment with the adult world. The novel is known for its frank portrayal of teenage angst and rebellion, as well as its themes of innocence, identity, and authenticity.",
             user_name = "artur",
             like = false)
+=======
+//        "The Great Gatsby" to Data(
+//            id = null,
+//            imageId = R.drawable.gatsby,
+//            title = "The Great Gatsby",
+//            author = " "
+//        )
+>>>>>>> 02e74ec8eb16d92de7fdf390d55fa8528f92ad0d
     )
 
     override fun onCreateView(
@@ -96,16 +118,26 @@ class FragmentMain : Fragment(), BookAdapter.OnItemClickListener {
     ): View? {
         binding = FragmentMainBinding.inflate(inflater, container, false)
 
+<<<<<<< HEAD
 
         init()
 //        searchView = binding.searchView
+=======
+        init()
+        searchView = binding.searchView
+
+
+>>>>>>> 02e74ec8eb16d92de7fdf390d55fa8528f92ad0d
         return binding.root
 
     }
 
     private fun init() {
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 02e74ec8eb16d92de7fdf390d55fa8528f92ad0d
         binding.apply {
             rcView.layoutManager = GridLayoutManager(binding.root.context, 1)
             rcView.adapter = adapter
@@ -114,6 +146,7 @@ class FragmentMain : Fragment(), BookAdapter.OnItemClickListener {
             searchEditText.setTextColor(resources.getColor(R.color.white))
             searchEditText.setHintTextColor(resources.getColor(R.color.white))
 
+<<<<<<< HEAD
             val db = Books.getDb(this@FragmentMain)
 
             db.getDao().getAll().asLiveData().observe(viewLifecycleOwner) { list ->
@@ -122,10 +155,20 @@ class FragmentMain : Fragment(), BookAdapter.OnItemClickListener {
 
             //        add to database from map recipes
 ////
+=======
+
+
+
+            val db = Books.getDb(this@FragmentMain)
+
+            //        add to database from map recipes
+
+>>>>>>> 02e74ec8eb16d92de7fdf390d55fa8528f92ad0d
 //            Thread {
 //                db.getDao().deleteAll()
 //            }.start()
 //
+<<<<<<< HEAD
             books.forEach {
                 val book = Data(imageId= it.value.imageId,
                     title = it.value.title,
@@ -145,6 +188,25 @@ class FragmentMain : Fragment(), BookAdapter.OnItemClickListener {
 
             db.getDao().getAll().asLiveData().observe(viewLifecycleOwner) {list ->
                 Log.d("Mylog", "list: ${list.size}")
+=======
+//            books.forEach {
+//                val book = Data(imageId= it.value.imageId,
+//                    title = it.value.title,
+//                    author = it.value.author,
+//                    publisher = it.value.publisher,
+//                    genre = it.value.genre,
+//                    year_of_publishing = it.value.year_of_publishing,
+//                    about_book = it.value.about_book,
+//                    user_name = it.value.user_name,
+//                    like = it.value.like)
+//                Thread {
+//                    db.getDao().insert(book)
+//                }.start()
+//            }
+
+            db.getDao().getAll().asLiveData().observe(viewLifecycleOwner) {list ->
+
+>>>>>>> 02e74ec8eb16d92de7fdf390d55fa8528f92ad0d
                 list.forEach(){
                     val book = Data(imageId= it.imageId,
                                     title = it.title,
@@ -156,7 +218,10 @@ class FragmentMain : Fragment(), BookAdapter.OnItemClickListener {
                                     user_name = it.user_name,
                                     like = it.like)
                     adapter.addBook(book)
+<<<<<<< HEAD
                     Log.d("MyLog", "init: ${book.title} ${book.like}")
+=======
+>>>>>>> 02e74ec8eb16d92de7fdf390d55fa8528f92ad0d
 
                 }
             }
@@ -175,18 +240,25 @@ class FragmentMain : Fragment(), BookAdapter.OnItemClickListener {
                 }
             })
 
+<<<<<<< HEAD
 
 
         }
 
 
 
+=======
+        }
+
+
+>>>>>>> 02e74ec8eb16d92de7fdf390d55fa8528f92ad0d
     }
 
     override fun onItemClick(book: Data) {
         val intent = Intent(requireContext() , ContentActivity::class.java)
         intent.putExtra("item", book)
         intent.putExtra("fragment", "book")
+<<<<<<< HEAD
         startActivityForResult(intent, REQUEST_CONTENT)
         Log.d("MyLog", "onItemClick: ${book.title} ${book.like}")
     }
@@ -204,6 +276,12 @@ class FragmentMain : Fragment(), BookAdapter.OnItemClickListener {
 
 
 
+=======
+        startActivity(intent)
+//        Log.d("MyLog", "onItemClick: $book")
+    }
+
+>>>>>>> 02e74ec8eb16d92de7fdf390d55fa8528f92ad0d
     fun updateBookList() {
         // Получите список книг из базы данных
         val db = Books.getDb(this)
@@ -223,6 +301,9 @@ class FragmentMain : Fragment(), BookAdapter.OnItemClickListener {
 
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 02e74ec8eb16d92de7fdf390d55fa8528f92ad0d
 }

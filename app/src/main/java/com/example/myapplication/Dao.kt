@@ -17,4 +17,9 @@ interface Dao {
     //update like
     @Query("UPDATE Data SET `like` = :likeValue WHERE title = :title")
     suspend fun updateLike(title: String, likeValue: Boolean)
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 02e74ec8eb16d92de7fdf390d55fa8528f92ad0d
 }

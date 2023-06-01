@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+<<<<<<< HEAD
 import android.content.Intent
 import android.content.SharedPreferences
 import android.net.Uri
@@ -7,10 +8,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.provider.MediaStore
+=======
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+>>>>>>> 02e74ec8eb16d92de7fdf390d55fa8528f92ad0d
 import com.example.myapplication.databinding.UserInfoBinding
 
 class User_Info : AppCompatActivity() {
     lateinit var binding: UserInfoBinding
+<<<<<<< HEAD
     private val PICK_IMAGE_REQUEST_CODE = 1
     private var selectedImagePath: String = ""
     private lateinit var sharedPreferences: SharedPreferences
@@ -21,10 +27,18 @@ class User_Info : AppCompatActivity() {
         val surname = "Trubchaninova"
         val email = "example@gmail.com"
         val phone = "+48123456789"
+=======
+    val name = "Alona"
+    val surname = "Trubchaninova"
+    val email = "example@gmail.com"
+    val phone = "+48123456789"
+    override fun onCreate(savedInstanceState: Bundle?) {
+>>>>>>> 02e74ec8eb16d92de7fdf390d55fa8528f92ad0d
         super.onCreate(savedInstanceState)
         binding = UserInfoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+<<<<<<< HEAD
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
         selectedImagePath = sharedPreferences.getString("image_path", "") ?: ""
         if (selectedImagePath.isNotEmpty()) {
@@ -33,10 +47,13 @@ class User_Info : AppCompatActivity() {
             binding.imUser.setImageResource(R.drawable.alice)
         }
 
+=======
+>>>>>>> 02e74ec8eb16d92de7fdf390d55fa8528f92ad0d
         binding.tvName.text = "Name: " + name
         binding.tvLastName.text = "Surname: " + surname
         binding.tvEmail.text = "Email: " + email
         binding.tvPhone.text = "Phone: " + phone
+<<<<<<< HEAD
         binding.tvNameEdit.setText(name)
         binding.tvLastNameEdit.setText(surname)
         binding.tvEmailEdit.setText(email)
@@ -93,6 +110,8 @@ class User_Info : AppCompatActivity() {
             val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
             startActivityForResult(intent, PICK_IMAGE_REQUEST_CODE)
         }
+=======
+>>>>>>> 02e74ec8eb16d92de7fdf390d55fa8528f92ad0d
 
 
         binding.btFavourites.setOnClickListener {
@@ -108,6 +127,7 @@ class User_Info : AppCompatActivity() {
         }
 
     }
+<<<<<<< HEAD
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -140,4 +160,6 @@ class User_Info : AppCompatActivity() {
         editor.putString("image_path", selectedImagePath)
         editor.apply()
     }
+=======
+>>>>>>> 02e74ec8eb16d92de7fdf390d55fa8528f92ad0d
 }

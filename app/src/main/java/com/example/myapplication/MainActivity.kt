@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 //        val toolbar: Toolbar = findViewById(R.id.toolbar)
 //        setSupportActionBar(toolbar)
+<<<<<<< HEAD
 //        val fragmentMain = supportFragmentManager.findFragmentById(R.id.MainHolder) as? FragmentMain
 //        fragmentMain?.updateBookList()
 //
@@ -27,6 +28,9 @@ class MainActivity : AppCompatActivity() {
 //        supportFragmentManager.beginTransaction()
 //            .replace(R.id.MainHolder, fragmentMain)
 //            .commit()
+=======
+
+>>>>>>> 02e74ec8eb16d92de7fdf390d55fa8528f92ad0d
 
         val fragment = FragmentMain() // создаем экземпляр фрагмента
         val transaction = supportFragmentManager.beginTransaction()
@@ -57,6 +61,7 @@ class MainActivity : AppCompatActivity() {
             else -> return super.onOptionsItemSelected(item)
         }
     }
+<<<<<<< HEAD
     override fun onResume() {
         super.onResume()
         val fragmentMain = supportFragmentManager.findFragmentById(R.id.MainHolder) as? FragmentMain
@@ -71,5 +76,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+=======
+>>>>>>> 02e74ec8eb16d92de7fdf390d55fa8528f92ad0d
 
 }

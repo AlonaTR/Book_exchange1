@@ -3,8 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+<<<<<<< HEAD
     <uses-permission android:name="android.permission.SENDTO" />
 
+=======
+>>>>>>> 02e74ec8eb16d92de7fdf390d55fa8528f92ad0d
 
     <application
         android:allowBackup="true"

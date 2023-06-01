@@ -26,7 +26,10 @@ class My_books : AppCompatActivity() {
                 val intent = Intent(this@My_books, ContentActivity::class.java)
                 intent.putExtra("item", book)
                 intent.putExtra("fragment", "my_book")
+<<<<<<< HEAD
 
+=======
+>>>>>>> 02e74ec8eb16d92de7fdf390d55fa8528f92ad0d
                 startActivity(intent)
 
             }
@@ -43,15 +46,21 @@ class My_books : AppCompatActivity() {
 
     fun loadMyBooks() {
         val db = User.getDb(this)
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 02e74ec8eb16d92de7fdf390d55fa8528f92ad0d
         //        add to database from map recipes
 
 //        Thread {
 //            db.getUserDao().deleteAll()
 //        }.start()
+<<<<<<< HEAD
 //
 //
+=======
+>>>>>>> 02e74ec8eb16d92de7fdf390d55fa8528f92ad0d
 //        val book = UserData(imageId= "/storage/emulated/0/Pictures/Telegram/IMG_20220403_110303_370.jpg",
 //        title = "Proba",
 //        author = "Author",
@@ -80,7 +89,11 @@ class My_books : AppCompatActivity() {
                 )
             }
             adapter.update(myBooks)
+<<<<<<< HEAD
 //            Log.d("MyLog", "onItemClick: $myBooks")
+=======
+            Log.d("MyLog", "onItemClick: $myBooks")
+>>>>>>> 02e74ec8eb16d92de7fdf390d55fa8528f92ad0d
         }
     }
 

@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+<<<<<<< HEAD
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,14 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
+=======
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.databinding.BookItemBinding
+import kotlinx.coroutines.flow.Flow
+>>>>>>> 02e74ec8eb16d92de7fdf390d55fa8528f92ad0d
 import java.util.ArrayList
 
 class BookAdapter(val listener: OnItemClickListener): RecyclerView.Adapter<BookAdapter.BookHolder>() {
@@ -24,6 +33,7 @@ class BookAdapter(val listener: OnItemClickListener): RecyclerView.Adapter<BookA
 
 
 
+<<<<<<< HEAD
     fun clear() {
         bookList.clear()
         notifyDataSetChanged()
@@ -31,6 +41,8 @@ class BookAdapter(val listener: OnItemClickListener): RecyclerView.Adapter<BookA
 
 
 
+=======
+>>>>>>> 02e74ec8eb16d92de7fdf390d55fa8528f92ad0d
 
     class BookHolder(item: View) : RecyclerView.ViewHolder(item) {
         val binding = BookItemBinding.bind(item)
@@ -43,6 +55,7 @@ class BookAdapter(val listener: OnItemClickListener): RecyclerView.Adapter<BookA
             } else {
                 tvDescItem.text = book.about_book
             }
+<<<<<<< HEAD
             checkboxLike.isChecked = book.like
 
             checkboxLike.setOnCheckedChangeListener { _, isChecked ->
@@ -50,12 +63,17 @@ class BookAdapter(val listener: OnItemClickListener): RecyclerView.Adapter<BookA
             }
 
 
+=======
+>>>>>>> 02e74ec8eb16d92de7fdf390d55fa8528f92ad0d
 
 //            tvDesc.text = book.about_book
             itemView.setOnClickListener {
                 listener.onItemClick(book)
             }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 02e74ec8eb16d92de7fdf390d55fa8528f92ad0d
         }
     }
 
@@ -81,11 +99,16 @@ class BookAdapter(val listener: OnItemClickListener): RecyclerView.Adapter<BookA
 
     interface OnItemClickListener {
         fun onItemClick(book: Data)
+<<<<<<< HEAD
         fun onLikeClick(book: Data, isChecked: Boolean)
 
     }
 
 
+=======
+    }
+
+>>>>>>> 02e74ec8eb16d92de7fdf390d55fa8528f92ad0d
     fun filter(query: String?) {
         query?.let { searchText ->
             val filteredList = bookList.filter { book ->
@@ -97,6 +120,9 @@ class BookAdapter(val listener: OnItemClickListener): RecyclerView.Adapter<BookA
 
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 02e74ec8eb16d92de7fdf390d55fa8528f92ad0d
 }

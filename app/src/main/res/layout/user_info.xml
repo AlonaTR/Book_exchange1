@@ -21,6 +21,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+<<<<<<< HEAD
     <Button
         android:id="@+id/editphoto"
         android:layout_width="match_parent"
@@ -37,6 +38,12 @@
         android:id="@+id/info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+=======
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+>>>>>>> 02e74ec8eb16d92de7fdf390d55fa8528f92ad0d
         android:layout_marginTop="16dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="@+id/imUser"
@@ -97,6 +104,7 @@
 
     </LinearLayout>
 
+<<<<<<< HEAD
     <LinearLayout
         android:id="@+id/infoEdit"
         android:layout_width="wrap_content"
@@ -165,6 +173,8 @@
 
     </LinearLayout>
 
+=======
+>>>>>>> 02e74ec8eb16d92de7fdf390d55fa8528f92ad0d
     <Button
         android:id="@+id/btEdit"
         android:layout_width="0dp"
@@ -172,6 +182,7 @@
         android:layout_marginTop="16dp"
         android:text="Edit"
         app:layout_constraintEnd_toEndOf="@+id/imUser"
+<<<<<<< HEAD
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/imUser"
         app:layout_constraintTop_toBottomOf="@+id/info" />
@@ -187,16 +198,28 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/imUser"
         app:layout_constraintTop_toBottomOf="@+id/infoEdit" />
+=======
+        app:layout_constraintStart_toStartOf="@+id/imUser"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+>>>>>>> 02e74ec8eb16d92de7fdf390d55fa8528f92ad0d
 
     <Button
         android:id="@+id/btFavourites"
         android:layout_width="0dp"
         android:layout_height="80dp"
+<<<<<<< HEAD
         android:layout_marginTop="32dp"
         android:background="@drawable/border"
         android:drawableEnd="@drawable/arrow"
         android:gravity="start|center_vertical"
         android:text="Favourites"
+=======
+        android:layout_marginTop="24dp"
+        android:background="@drawable/border"
+        android:text="Favourites"
+        android:gravity="start|center_vertical"
+        android:drawableEnd="@drawable/arrow"
+>>>>>>> 02e74ec8eb16d92de7fdf390d55fa8528f92ad0d
         app:layout_constraintEnd_toEndOf="@+id/btEdit"
         app:layout_constraintStart_toStartOf="@+id/btEdit"
         app:layout_constraintTop_toBottomOf="@+id/btEdit" />
@@ -205,12 +228,19 @@
         android:id="@+id/btMyBooks"
         android:layout_width="0dp"
         android:layout_height="80dp"
+<<<<<<< HEAD
         android:layout_marginTop="8dp"
+=======
+        android:layout_marginTop="16dp"
+>>>>>>> 02e74ec8eb16d92de7fdf390d55fa8528f92ad0d
         android:background="@drawable/border"
         android:drawableEnd="@drawable/arrow"
         android:gravity="start|center_vertical"
         android:text="My Books"
+<<<<<<< HEAD
         app:layout_constraintBottom_toBottomOf="parent"
+=======
+>>>>>>> 02e74ec8eb16d92de7fdf390d55fa8528f92ad0d
         app:layout_constraintEnd_toEndOf="@+id/btFavourites"
         app:layout_constraintStart_toStartOf="@+id/btFavourites"
         app:layout_constraintTop_toBottomOf="@+id/btFavourites" />

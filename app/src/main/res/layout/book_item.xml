@@ -56,6 +56,7 @@
                 android:fontFamily="@font/dm_sans"
                 android:text="Description"
                 android:textColor="#C1C1C1" />
+<<<<<<< HEAD
 
             <CheckBox
                 android:id="@+id/checkboxLike"
@@ -68,6 +69,8 @@
                 android:scaleX="0.5"
                 android:scaleY="0.5" />
 
+=======
+>>>>>>> 02e74ec8eb16d92de7fdf390d55fa8528f92ad0d
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

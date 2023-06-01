@@ -120,6 +120,7 @@
                 android:textColor="@color/grey"
                 android:textSize="16sp" />
 
+<<<<<<< HEAD
             <Button
                 android:id="@+id/addbook"
                 android:layout_width="383dp"
@@ -127,10 +128,24 @@
                 android:layout_gravity="bottom|end"
                 android:layout_margin="16dp"
                 android:text="Add book" />
+=======
+
+>>>>>>> 02e74ec8eb16d92de7fdf390d55fa8528f92ad0d
 
 
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
 
+<<<<<<< HEAD
+=======
+    <Button
+        android:id="@+id/addbook"
+        android:layout_width="383dp"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:text="Add book" />
+
+>>>>>>> 02e74ec8eb16d92de7fdf390d55fa8528f92ad0d
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,6 +1,7 @@
 package com.example.myapplication
 
 
+<<<<<<< HEAD
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -19,13 +20,28 @@ class ContentActivity : AppCompatActivity() {
     private lateinit var binding: ActivityContentBinding
 //    val bookTitle = intent.getStringExtra("title")
 
+=======
+import FragmentBook
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import androidx.viewbinding.ViewBinding
+import com.example.myapplication.R
+import com.example.myapplication.databinding.ActivityContentBinding
+
+class ContentActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityContentBinding
+>>>>>>> 02e74ec8eb16d92de7fdf390d55fa8528f92ad0d
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityContentBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.bClose.setOnClickListener {
+<<<<<<< HEAD
             sendEmail()
+=======
+            finish()
+>>>>>>> 02e74ec8eb16d92de7fdf390d55fa8528f92ad0d
         }
         val tag = "FragmentBook"
         val fragmentType = intent.getStringExtra("fragment")
@@ -35,12 +51,16 @@ class ContentActivity : AppCompatActivity() {
             supportFragmentManager.beginTransaction()
                 .add(R.id.fl_book, fragment, tag)
                 .commit()
+<<<<<<< HEAD
             binding.bClose.visibility = View.INVISIBLE
+=======
+>>>>>>> 02e74ec8eb16d92de7fdf390d55fa8528f92ad0d
         } else {
             val fragment = FragmentBook()
             supportFragmentManager.beginTransaction()
                 .add(R.id.fl_book, fragment, tag)
                 .commit()
+<<<<<<< HEAD
 
 
         }
@@ -61,4 +81,11 @@ class ContentActivity : AppCompatActivity() {
 
 
 
+=======
+        }
+
+    }
+
+
+>>>>>>> 02e74ec8eb16d92de7fdf390d55fa8528f92ad0d
 }

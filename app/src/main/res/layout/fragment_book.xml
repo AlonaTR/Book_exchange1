@@ -5,7 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
+<<<<<<< HEAD
     >
+=======
+    tools:context=".FragmentBook">
+>>>>>>> 02e74ec8eb16d92de7fdf390d55fa8528f92ad0d
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
@@ -54,7 +58,20 @@
                 android:textColor="@color/white"
                 android:textSize="26sp" />
 
+<<<<<<< HEAD
 
+=======
+            <CheckBox
+                android:id="@+id/checkboxLike"
+                android:layout_width="69dp"
+                android:layout_height="66dp"
+                android:layout_gravity="center|end"
+                android:button="@drawable/checkbox_heart"
+                android:clickable="true"
+                android:focusable="true"
+                android:scaleX="0.5"
+                android:scaleY="0.5" />
+>>>>>>> 02e74ec8eb16d92de7fdf390d55fa8528f92ad0d
 
             <!--            <TextView-->
 <!--                android:id="@+id/tvTitleBook"-->
