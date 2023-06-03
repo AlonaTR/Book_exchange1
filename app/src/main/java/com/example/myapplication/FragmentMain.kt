@@ -116,49 +116,51 @@ class FragmentMain : Fragment(), BookAdapter.OnItemClickListener {
 
             val db = Books.getDb(this@FragmentMain)
 
-            db.getDao().getAll().asLiveData().observe(viewLifecycleOwner) { list ->
-                adapter.update(list)
-            }
+
 
             //        add to database from map recipes
 ////
 //            Thread {
 //                db.getDao().deleteAll()
 //            }.start()
-//
-            books.forEach {
-                val book = Data(imageId= it.value.imageId,
-                    title = it.value.title,
-                    author = it.value.author,
-                    publisher = it.value.publisher,
-                    genre = it.value.genre,
-                    year_of_publishing = it.value.year_of_publishing,
-                    about_book = it.value.about_book,
-                    user_name = it.value.user_name,
-                    like = it.value.like)
-                Thread {
-                    db.getDao().insert(book)
-                }.start()
-            }
+
+//            books.forEach {
+//                val book = Data(imageId= it.value.imageId,
+//                    title = it.value.title,
+//                    author = it.value.author,
+//                    publisher = it.value.publisher,
+//                    genre = it.value.genre,
+//                    year_of_publishing = it.value.year_of_publishing,
+//                    about_book = it.value.about_book,
+//                    user_name = it.value.user_name,
+//                    like = it.value.like)
+//                Thread {
+//                    db.getDao().insert(book)
+//                }.start()
+//            }
             //if rcView has items, then clear it and then add items from database
 
+//            db.getDao().getAll().asLiveData().observe(viewLifecycleOwner) { list ->
+//                adapter.update(list)
+//            }
 
             db.getDao().getAll().asLiveData().observe(viewLifecycleOwner) {list ->
-                Log.d("Mylog", "list: ${list.size}")
-                list.forEach(){
-                    val book = Data(imageId= it.imageId,
-                                    title = it.title,
-                                    author = it.author,
-                                    publisher = it.publisher,
-                                    genre = it.genre,
-                                    year_of_publishing = it.year_of_publishing,
-                                    about_book = it.about_book,
-                                    user_name = it.user_name,
-                                    like = it.like)
-                    adapter.addBook(book)
-                    Log.d("MyLog", "init: ${book.title} ${book.like}")
-
+                val BooksList = list.map {
+                    Data(
+                        id = it.id,
+                        imageId = it.imageId,
+                        title = it.title,
+                        author = it.author,
+                        publisher = it.publisher,
+                        genre = it.genre,
+                        year_of_publishing = it.year_of_publishing,
+                        about_book = it.about_book,
+                        user_name = it.user_name,
+                        like = it.like
+                    )
                 }
+                adapter.update(BooksList)
+
             }
 
 
@@ -184,6 +186,7 @@ class FragmentMain : Fragment(), BookAdapter.OnItemClickListener {
     }
 
     override fun onItemClick(book: Data) {
+        // Open ContentActivity with details of book after click on item
         val intent = Intent(requireContext() , ContentActivity::class.java)
         intent.putExtra("item", book)
         intent.putExtra("fragment", "book")
@@ -192,11 +195,12 @@ class FragmentMain : Fragment(), BookAdapter.OnItemClickListener {
     }
 
     override fun onLikeClick(book: Data, isChecked: Boolean) {
-        // Обновите значение поля "like" для данной книги в базе данных
+        // Update like for book in database
         val db = Books.getDb(this)
         val updatedBook = book.copy(like = isChecked)
         GlobalScope.launch(Dispatchers.IO) {
             db.getDao().updateLike(updatedBook.title, isChecked)
+
         }
     }
 

@@ -22,16 +22,16 @@
             <ImageView
                 android:id="@+id/imMain"
                 android:layout_width="match_parent"
-                android:layout_height="450dp"
-                android:background="#000000"
+                android:layout_height="150dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/image"
+                android:background="@color/black"
                 app:layout_collapseMode="parallax" />
 
             <Button
                 android:id="@+id/choosephoto"
                 android:layout_width="match_parent"
-                android:layout_height="413dp"
+                android:layout_height="match_parent"
                 android:background="@android:color/transparent"
                 android:text="Choose Photo" />
 
@@ -123,8 +123,8 @@
 
             <Button
                 android:id="@+id/addbook"
-                android:layout_width="383dp"
-                android:layout_height="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="bottom|end"
                 android:layout_margin="16dp"
                 android:text="Add book" />

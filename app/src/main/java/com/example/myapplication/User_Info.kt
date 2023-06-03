@@ -51,6 +51,7 @@ class User_Info : AppCompatActivity() {
             binding.btMyBooks.visibility = android.view.View.INVISIBLE
             binding.btEdit.visibility = android.view.View.INVISIBLE
 
+            binding?.scroll?.visibility = android.view.View.VISIBLE
             binding.tvNameEdit.visibility = android.view.View.VISIBLE
             binding.tvLastNameEdit.visibility = android.view.View.VISIBLE
             binding.tvEmailEdit.visibility = android.view.View.VISIBLE
@@ -69,6 +70,7 @@ class User_Info : AppCompatActivity() {
             binding.btMyBooks.visibility = android.view.View.VISIBLE
             binding.btEdit.visibility = android.view.View.VISIBLE
 
+            binding?.scroll?.visibility = android.view.View.INVISIBLE
             binding.tvNameEdit.visibility = android.view.View.INVISIBLE
             binding.tvLastNameEdit.visibility = android.view.View.INVISIBLE
             binding.tvEmailEdit.visibility = android.view.View.INVISIBLE

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context=".AddBook">
+    >
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
@@ -20,20 +20,12 @@
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <ImageView
-                android:id="@+id/imMain"
+                android:id="@+id/imMainBook"
                 android:layout_width="match_parent"
-                android:layout_height="450dp"
-                android:background="#000000"
+                android:layout_height="150dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/image"
+                android:src="@drawable/alice"
                 app:layout_collapseMode="parallax" />
-
-            <Button
-                android:id="@+id/choosephoto"
-                android:layout_width="match_parent"
-                android:layout_height="413dp"
-                android:background="@android:color/transparent"
-                android:text="Choose Photo" />
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
@@ -49,34 +41,48 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/tvTitle"
+
+            <TextView
+                android:id="@+id/tvTitleBook"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/dm_sans_bold"
-                android:gravity="left"
+                android:gravity="center"
                 android:padding="16dp"
-                android:text="Title"
+                android:text=" Title"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textColor="@color/white"
-                android:textSize="26dp" />
+                android:textSize="26sp" />
 
-            <EditText
-                android:id="@+id/tvAbout"
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/tvTitleBook"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:fontFamily="@font/dm_sans_bold"-->
+            <!--                android:gravity="left"-->
+            <!--                android:padding="16dp"-->
+            <!--                android:text=" Title"-->
+            <!--                android:textAppearance="@style/TextAppearance.AppCompat.Large"-->
+            <!--                android:textColor="@color/white"-->
+            <!--                android:textSize="26sp" />-->
+
+            <TextView
+                android:id="@+id/tvAboutBook"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="5dp"
                 android:fontFamily="@font/dm_sans"
                 android:text="About book:"
                 android:textColor="@color/grey"
-                android:textSize="16sp" />
+                android:textSize="15sp" />
 
-            <EditText
-                android:id="@+id/tvAuthor"
+            <TextView
+                android:id="@+id/tvAuthorBook"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="5dp"
@@ -84,50 +90,42 @@
                 android:fontFamily="@font/dm_sans"
                 android:text="Author:"
                 android:textColor="@color/grey"
-                android:textSize="16sp" />
+                android:textSize="15sp" />
 
-            <EditText
-                android:id="@+id/tvPublisher"
+            <TextView
+                android:id="@+id/tvPublisherBook"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="5sp"
                 android:layout_marginEnd="5sp"
                 android:fontFamily="@font/dm_sans"
                 android:text="Publisher:"
                 android:textColor="@color/grey"
-                android:textSize="16sp" />
+                android:textSize="15sp" />
 
-            <EditText
-                android:id="@+id/tvGenre"
+            <TextView
+                android:id="@+id/tvGenreBook"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="5dp"
                 android:fontFamily="@font/dm_sans"
                 android:text="Genre:"
                 android:textColor="@color/grey"
-                android:textSize="16sp" />
+                android:textSize="15sp" />
 
-            <EditText
-                android:id="@+id/tvYear_published"
+            <TextView
+                android:id="@+id/tvYearPublishedBook"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="5dp"
                 android:fontFamily="@font/dm_sans"
                 android:text="Year Published:"
                 android:textColor="@color/grey"
-                android:textSize="16sp" />
-
-            <Button
-                android:id="@+id/addbook"
-                android:layout_width="383dp"
-                android:layout_height="50dp"
-                android:layout_gravity="bottom|end"
-                android:layout_margin="16dp"
-                android:text="Add book" />
+                android:textSize="15sp" />
 
 
         </LinearLayout>
